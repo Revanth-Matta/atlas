@@ -365,6 +365,107 @@ body {
   padding: 26px;
 }
 
+.region-art {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: 0 0 28px;
+  overflow: visible;
+}
+
+.art-route {
+  fill: none;
+  stroke: url(#bookGlow);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  opacity: 0.75;
+}
+
+#games .art-route {
+  stroke: url(#gameGlow);
+}
+
+#learning .art-route {
+  stroke: url(#dataGlow);
+}
+
+#making .art-route {
+  stroke: url(#buildGlow);
+}
+
+#food .art-route {
+  stroke: url(#foodGlow);
+}
+
+.art-star {
+  fill: var(--teal);
+  opacity: 0;
+  filter: drop-shadow(0 0 8px var(--teal));
+}
+
+.book-base,
+.book-page,
+.book-spine,
+.game-node,
+.data-orbit,
+.data-bar,
+.blueprint,
+.blueprint-line,
+.rocket-body,
+.rocket-fin,
+.rocket-flame,
+.bowl,
+.bowl-rim,
+.steam,
+.leaf,
+.leaf-vein {
+  fill: none;
+  stroke: var(--cream);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.82;
+}
+
+.book-base,
+.book-page,
+.game-node,
+.data-bar,
+.blueprint,
+.rocket-body,
+.rocket-fin,
+.bowl {
+  fill: rgba(245, 239, 226, 0.08);
+}
+
+.data-orbit {
+  stroke: var(--violet);
+  stroke-dasharray: 6 10;
+  opacity: 0.45;
+}
+
+.data-bar {
+  stroke: var(--teal);
+  fill: rgba(55, 224, 200, 0.14);
+}
+
+.rocket-flame {
+  stroke: var(--coral);
+}
+
+.steam {
+  stroke: var(--teal);
+  opacity: 0.55;
+}
+
+.leaf {
+  stroke: var(--teal);
+  fill: rgba(55, 224, 200, 0.12);
+}
+
 .region-index {
   margin: 0 0 14px;
   color: var(--coral);
@@ -645,9 +746,10 @@ body {
 }
 
 body.hyper-jump {
-  filter: hue-rotate(45deg) saturate(1.45) brightness(1.12);
+  filter: hue-rotate(35deg) saturate(1.25) brightness(1.08);
   animation: hyper-jump 1.1s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 body.hyper-jump .nebula {
   animation: nebula-hyper 1.1s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -826,6 +928,14 @@ body.hyper-jump::after {
 
   .cursor {
     display: none;
+  }
+
+  .art-route {
+    stroke-dashoffset: 0;
+  }
+
+  .art-star {
+    opacity: 0.8;
   }
 
   body.hyper-jump,
