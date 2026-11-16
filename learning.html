@@ -1,56 +1,228 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Learning & Data — Revanth’s Atlas</title>
-<meta name="description" content="Revanth’s learning constellation: data analysis, AI tools, building, and continuous exploration."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;500;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/css/main.css"/>
-<link rel="stylesheet" href="assets/css/atlas.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning & Data — Revanth’s Atlas</title>
+  <meta name="description" content="Revanth’s learning constellation: data analysis, AI tools, certifications, and continuous exploration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;500;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/atlas.css" />
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<canvas id="starfield" aria-hidden="true"></canvas>
-<div class="nebula" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
-<header class="atlas-nav">
-<a class="nav-brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>Revanth’s Atlas</span></a>
-<div class="nav-controls">
-<button id="soundToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle sound"><span aria-hidden="true">♪</span></button>
-<button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark mode"><span aria-hidden="true">☾</span></button>
-</div>
-</header>
-<main id="main" class="region-page">
-<div class="region-page-inner">
-<a class="region-return" href="index.html">← Back to Atlas</a>
-<section class="region-hero"><p class="section-label">Region 03</p><h1>Learning & Data</h1><p class="region-lede">An open expanse for questions, patterns, data, and new skills.</p></section>
-<section class="glass-panel">
-<h2>Learning constellation</h2>
-<p>I am currently learning data analysis through SQL, Tableau, Power BI, and Advanced Excel. I am also exploring AI tools, digital marketing, productivity, design systems, and game development.</p>
-<div class="skill-card-grid">
-<div class="skill-card"><h3>SQL</h3><p>Exploring databases, queries, patterns, and data analysis foundations.</p></div>
-<div class="skill-card"><h3>Tableau</h3><p>Exploring visual storytelling, dashboards, and ways to make data understandable.</p></div>
-<div class="skill-card"><h3>Power BI</h3><p>Exploring interactive reports, data models, and business insights.</p></div>
-<div class="skill-card"><h3>Advanced Excel</h3><p>Exploring formulas, analysis, organisation, and practical data workflows.</p></div>
-</div>
-<div class="note-grid">
-<details class="note-card" open><summary><span class="note-status">Exploring</span><span>AI tools and building</span></summary><div class="note-body"><p>I dabble in multiple projects with AI assistance, combining my own guidance, ideas, and decisions with AI-supported coding and research. This includes creating GitHub-hosted live sites from scratch using code and scripts.</p><ul class="note-tags"><li>AI tools</li><li>GitHub Pages</li><li>Building</li></ul></div></details>
-<details class="note-card"><summary><span class="note-status">Future</span><span>Data mini-projects</span></summary><div class="note-body"><p>Future routes may include SQL practice, Tableau and Power BI dashboards, Excel experiments, and small data explorations.</p><ul class="note-tags"><li>SQL</li><li>Tableau</li><li>Power BI</li><li>Excel</li></ul></div></details>
-<details class="note-card"><summary><span class="note-status">Future</span><span>Learning progress</span></summary><div class="note-body"><p>Future updates may include completed lessons, useful resources, mini-projects, and reflections on what I am learning.</p><ul class="note-tags"><li>Learning log</li><li>Projects</li><li>Explorations</li></ul></div></details>
-</div>
-</section>
-<div class="route-navigation"><a class="btn btn-outline" href="games.html">← Previous route</a><a class="btn btn-primary" href="making.html">Next route →</a></div>
-<a class="region-return" href="index.html">← Back to Atlas</a>
-</div>
-</main>
-<div class="cursor" id="cursor" aria-hidden="true"></div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="assets/js/stars.js"></script>
-<script src="assets/js/main.js"></script>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="atlas-nav">
+    <a class="nav-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Revanth’s Atlas</span>
+    </a>
+
+    <div class="nav-controls">
+      <button id="soundToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle sound">
+        <span aria-hidden="true">♪</span>
+      </button>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark mode">
+        <span aria-hidden="true">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="region-page">
+    <div class="region-page-inner">
+      <a class="region-return" href="index.html">← Back to Atlas</a>
+
+      <section class="region-hero">
+        <p class="section-label">Region 03</p>
+        <h1>Learning & Data</h1>
+        <p class="region-lede">
+          An open expanse for questions, patterns, data, and new skills.
+        </p>
+      </section>
+
+      <section class="glass-panel">
+        <svg class="region-art" viewBox="0 0 320 180" aria-hidden="true">
+          <defs>
+            <linearGradient id="dataGlow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#37e0c8" />
+              <stop offset="100%" stop-color="#ff7a66" />
+            </linearGradient>
+          </defs>
+
+          <ellipse class="data-orbit" cx="160" cy="95" rx="115" ry="48" />
+          <ellipse class="data-orbit" cx="160" cy="95" rx="75" ry="30" />
+
+          <path class="art-route" d="M60 120 L110 75 L160 105 L210 60 L260 95" />
+          <circle class="art-star" cx="60" cy="120" r="4" />
+          <circle class="art-star" cx="110" cy="75" r="4" />
+          <circle class="art-star" cx="160" cy="105" r="5" />
+          <circle class="art-star" cx="210" cy="60" r="4" />
+          <circle class="art-star" cx="260" cy="95" r="3" />
+
+          <rect class="data-bar" x="95" y="115" width="14" height="30" rx="4" />
+          <rect class="data-bar" x="125" y="100" width="14" height="45" rx="4" />
+          <rect class="data-bar" x="155" y="85" width="14" height="60" rx="4" />
+          <rect class="data-bar" x="185" y="70" width="14" height="75" rx="4" />
+        </svg>
+
+        <h2>Current learning</h2>
+        <div class="skill-orbit">
+          <span>SQL</span>
+          <span>Tableau</span>
+          <span>Power BI</span>
+          <span>Advanced Excel</span>
+        </div>
+
+        <div class="note-grid">
+          <details class="note-card" open>
+            <summary>
+              <span class="note-status">Exploring</span>
+              <span>AI tools and building</span>
+            </summary>
+            <div class="note-body">
+              <p>
+                I explore multiple projects with AI assistance, combining my own ideas and guidance with
+                AI-supported coding, research, and experimentation. This includes creating GitHub-hosted
+                live sites from scratch.
+              </p>
+              <ul class="note-tags">
+                <li>AI tools</li>
+                <li>GitHub Pages</li>
+                <li>Building</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="note-card">
+            <summary>
+              <span class="note-status">Future</span>
+              <span>Data mini-projects</span>
+            </summary>
+            <div class="note-body">
+              <p>
+                Future routes may include SQL practice, Tableau and Power BI dashboards, Excel experiments,
+                and small data explorations.
+              </p>
+              <ul class="note-tags">
+                <li>SQL</li>
+                <li>Tableau</li>
+                <li>Power BI</li>
+                <li>Excel</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="glass-panel" style="margin-top: 35px;">
+        <h2>Certifications</h2>
+
+        <div class="feature-card">
+          <p class="feature-label">Certified</p>
+          <h3>Six Sigma White Belt</h3>
+          <p class="feature-meta">Certification completed</p>
+        </div>
+
+        <div class="note-grid">
+          <details class="note-card" open>
+            <summary>
+              <span class="note-status">Certified</span>
+              <span>LinkedIn Learning</span>
+            </summary>
+            <div class="note-body">
+              <p>
+                Profile optimisation · Resume and CV improvement · Email etiquette · Professional
+                communication · Basic to intermediate SEO · Digital marketing fundamentals ·
+                Graphic design basics · Canva and design tools · Profile image and banner design ·
+                Cover image design · Image editing and enhancement
+              </p>
+              <ul class="note-tags">
+                <li>LinkedIn Learning</li>
+                <li>Professional skills</li>
+                <li>Design</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="glass-panel" style="margin-top: 35px;">
+        <h2>Skills</h2>
+
+        <div class="skill-card-grid">
+          <div class="skill-card">
+            <h3>SQL</h3>
+            <p>Learning</p>
+          </div>
+          <div class="skill-card">
+            <h3>Tableau</h3>
+            <p>Learning</p>
+          </div>
+          <div class="skill-card">
+            <h3>Power BI</h3>
+            <p>Learning</p>
+          </div>
+          <div class="skill-card">
+            <h3>Advanced Excel</h3>
+            <p>Learning</p>
+          </div>
+          <div class="skill-card">
+            <h3>AI tools</h3>
+            <p>Exploring</p>
+          </div>
+          <div class="skill-card">
+            <h3>Digital marketing</h3>
+            <p>Basic to intermediate</p>
+          </div>
+          <div class="skill-card">
+            <h3>SEO</h3>
+            <p>Basic to intermediate</p>
+          </div>
+          <div class="skill-card">
+            <h3>Graphic design</h3>
+            <p>Intermediate</p>
+          </div>
+          <div class="skill-card">
+            <h3>Profile and banner design</h3>
+            <p>Intermediate</p>
+          </div>
+          <div class="skill-card">
+            <h3>Image editing and ethical alteration</h3>
+            <p>Intermediate</p>
+          </div>
+          <div class="skill-card">
+            <h3>Email etiquette</h3>
+            <p>Certified / trained</p>
+          </div>
+          <div class="skill-card">
+            <h3>LinkedIn profile optimisation</h3>
+            <p>Certified / trained</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="route-navigation">
+        <a class="btn btn-outline" href="games.html">← Previous route</a>
+        <a class="btn btn-primary" href="making.html">Next route →</a>
+      </div>
+
+      <a class="region-return" href="index.html">← Back to Atlas</a>
+    </div>
+  </main>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/stars.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
