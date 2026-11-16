@@ -105,6 +105,38 @@ if (!prefersReducedMotion && window.gsap) {
     ease: "power2.out"
   });
 
+  gsap.utils.toArray(".region-art").forEach((art) => {
+    const route = art.querySelector(".art-route");
+    const stars = art.querySelectorAll(".art-star");
+
+    if (route) {
+      gsap.to(route, {
+        scrollTrigger: {
+          trigger: art,
+          start: "top 88%",
+          toggleActions: "play none none reverse"
+        },
+        strokeDashoffset: 0,
+        duration: 1.8,
+        ease: "power2.inOut"
+      });
+    }
+
+    if (stars.length) {
+      gsap.to(stars, {
+        scrollTrigger: {
+          trigger: art,
+          start: "top 88%",
+          toggleActions: "play none none reverse"
+        },
+        opacity: 1,
+        duration: 0.45,
+        stagger: 0.14,
+        ease: "power2.out"
+      });
+    }
+  });
+
   gsap.utils.toArray(".glass-panel, .glass-card, .atlas-node").forEach((element) => {
     gsap.from(element, {
       scrollTrigger: {
