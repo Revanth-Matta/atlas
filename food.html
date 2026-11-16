@@ -1,58 +1,180 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Food & Well-being — Revanth’s Atlas</title>
-<meta name="description" content="Revanth’s food and well-being routes: vegetarian flavours, experiments, and everyday discovery."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;500;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/css/main.css"/>
-<link rel="stylesheet" href="assets/css/atlas.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food & Well-being — Revanth’s Atlas</title>
+  <meta name="description" content="Revanth’s food and well-being routes: vegetarian flavours, experiments, and everyday discovery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;500;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/atlas.css" />
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<canvas id="starfield" aria-hidden="true"></canvas>
-<div class="nebula" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
-<header class="atlas-nav">
-<a class="nav-brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>Revanth’s Atlas</span></a>
-<div class="nav-controls">
-<button id="soundToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle sound"><span aria-hidden="true">♪</span></button>
-<button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark mode"><span aria-hidden="true">☾</span></button>
-</div>
-</header>
-<main id="main" class="region-page">
-<div class="region-page-inner">
-<a class="region-return" href="index.html">← Back to Atlas</a>
-<section class="region-hero"><p class="section-label">Region 05</p><h1>Food & Well-being</h1><p class="region-lede">A warm point for everyday meals, better choices, and small experiments in feeling good.</p></section>
-<section class="glass-panel">
-<h2>Flavour compass</h2>
-<p>I am exploring varieties in vegetarian food, trying new flavours and dishes, and using YouTube as a major guide for cooking ideas and tutorials at home.</p>
-<div class="flavour-grid">
-<div class="flavour-card"><strong>Spicy</strong><p>Bold heat and layered masalas.</p></div>
-<div class="flavour-card"><strong>Savoury</strong><p>Comforting, satisfying everyday meals.</p></div>
-<div class="flavour-card"><strong>Creamy</strong><p>Rich textures and mild flavours.</p></div>
-<div class="flavour-card"><strong>Crunchy</strong><p>Snacks, textures, and contrast.</p></div>
-<div class="flavour-card"><strong>Fresh</strong><p>Light, simple, and refreshing combinations.</p></div>
-<div class="flavour-card"><strong>Experimental</strong><p>New dishes, ideas, and flavour pairings.</p></div>
-</div>
-<div class="note-grid">
-<details class="note-card" open><summary><span class="note-status">Current</span><span>YouTube-guided cooking</span></summary><div class="note-body"><p>YouTube is one of my greatest assistants and guides for cooking at home. I use tutorials and ideas to learn, experiment, and try new vegetarian dishes.</p><ul class="note-tags"><li>YouTube</li><li>Home cooking</li><li>Vegetarian</li></ul></div></details>
-<details class="note-card"><summary><span class="note-status">Future</span><span>Recipe notes</span></summary><div class="note-body"><p>Future notes may include simple recipes, ingredients, methods, variations, and lessons from food experiments.</p><ul class="note-tags"><li>Recipes</li><li>Experiments</li><li>Vegetarian</li></ul></div></details>
-<details class="note-card"><summary><span class="note-status">Future</span><span>Well-being notes</span></summary><div class="note-body"><p>Future notes may include practical habits, food choices, and small experiments in feeling good.</p><ul class="note-tags"><li>Well-being</li><li>Habits</li><li>Everyday choices</li></ul></div></details>
-</div>
-</section>
-<div class="route-navigation"><a class="btn btn-outline" href="making.html">← Previous route</a><a class="btn btn-primary" href="reading.html">Next route →</a></div>
-<a class="region-return" href="index.html">← Back to Atlas</a>
-</div>
-</main>
-<div class="cursor" id="cursor" aria-hidden="true"></div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="assets/js/stars.js"></script>
-<script src="assets/js/main.js"></script>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="atlas-nav">
+    <a class="nav-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Revanth’s Atlas</span>
+    </a>
+
+    <div class="nav-controls">
+      <button id="soundToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle sound">
+        <span aria-hidden="true">♪</span>
+      </button>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark mode">
+        <span aria-hidden="true">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="region-page">
+    <div class="region-page-inner">
+      <a class="region-return" href="index.html">← Back to Atlas</a>
+
+      <section class="region-hero">
+        <p class="section-label">Region 05</p>
+        <h1>Food & Well-being</h1>
+        <p class="region-lede">
+          A warm point for everyday meals, better choices, and small experiments in feeling good.
+        </p>
+      </section>
+
+      <section class="glass-panel">
+        <svg class="region-art" viewBox="0 0 320 180" aria-hidden="true">
+          <defs>
+            <linearGradient id="foodGlow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff7a66" />
+              <stop offset="100%" stop-color="#37e0c8" />
+            </linearGradient>
+          </defs>
+
+          <path class="art-route" d="M45 120 C 95 85, 145 125, 195 85 C 235 60, 270 80, 290 55" />
+          <circle class="art-star" cx="45" cy="120" r="4" />
+          <circle class="art-star" cx="145" cy="125" r="3" />
+          <circle class="art-star" cx="195" cy="85" r="4" />
+          <circle class="art-star" cx="290" cy="55" r="5" />
+
+          <path class="bowl" d="M85 110 Q 130 155 175 110 Z" />
+          <path class="bowl-rim" d="M80 108 Q 130 100 180 108" />
+          <path class="steam" d="M110 90 Q 105 72 115 58 M130 90 Q 125 70 135 56 M150 90 Q 145 72 155 58" />
+
+          <path class="leaf" d="M225 105 Q 245 70 275 75 Q 260 110 225 105 Z" />
+          <path class="leaf-vein" d="M232 102 Q 250 88 268 79" />
+        </svg>
+
+        <h2>Flavour compass</h2>
+        <p>
+          I am exploring varieties in vegetarian food, trying new flavours and dishes, and using YouTube
+          as a major guide for cooking ideas and tutorials at home.
+        </p>
+
+        <div class="flavour-grid">
+          <div class="flavour-card">
+            <strong>Spicy</strong>
+            <p>Bold heat and layered flavours.</p>
+          </div>
+          <div class="flavour-card">
+            <strong>Savoury</strong>
+            <p>Comforting, satisfying everyday meals.</p>
+          </div>
+          <div class="flavour-card">
+            <strong>Creamy</strong>
+            <p>Rich textures and mild flavours.</p>
+          </div>
+          <div class="flavour-card">
+            <strong>Crunchy</strong>
+            <p>Snacks, textures, and contrast.</p>
+          </div>
+          <div class="flavour-card">
+            <strong>Fresh</strong>
+            <p>Light, simple, and refreshing combinations.</p>
+          </div>
+          <div class="flavour-card">
+            <strong>Experimental</strong>
+            <p>New dishes, ideas, and flavour pairings.</p>
+          </div>
+        </div>
+
+        <div class="note-grid">
+          <details class="note-card" open>
+            <summary>
+              <span class="note-status">Current</span>
+              <span>YouTube-guided cooking</span>
+            </summary>
+            <div class="note-body">
+              <p>
+                YouTube is one of my greatest assistants and guides for cooking at home. I use tutorials
+                and ideas to learn, experiment, and try new vegetarian dishes.
+              </p>
+              <ul class="note-tags">
+                <li>YouTube</li>
+                <li>Home cooking</li>
+                <li>Vegetarian</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="note-card">
+            <summary>
+              <span class="note-status">Future</span>
+              <span>Recipe notes</span>
+            </summary>
+            <div class="note-body">
+              <p>
+                Future notes may include simple recipes, ingredients, methods, variations, and lessons from
+                food experiments.
+              </p>
+              <ul class="note-tags">
+                <li>Recipes</li>
+                <li>Experiments</li>
+                <li>Vegetarian</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="note-card">
+            <summary>
+              <span class="note-status">Future</span>
+              <span>Well-being notes</span>
+            </summary>
+            <div class="note-body">
+              <p>
+                Future notes may include practical habits, food choices, and small experiments in feeling
+                good.
+              </p>
+              <ul class="note-tags">
+                <li>Well-being</li>
+                <li>Habits</li>
+                <li>Everyday choices</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <div class="route-navigation">
+        <a class="btn btn-outline" href="making.html">← Previous route</a>
+        <a class="btn btn-primary" href="reading.html">Next route →</a>
+      </div>
+
+      <a class="region-return" href="index.html">← Back to Atlas</a>
+    </div>
+  </main>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/stars.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
