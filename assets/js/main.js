@@ -5,6 +5,10 @@ const soundToggle = document.getElementById("soundToggle");
 const themeToggle = document.getElementById("themeToggle");
 const copyEmail = document.getElementById("copyEmail");
 const copyFeedback = document.getElementById("copyFeedback");
+const strategyStar = document.getElementById("strategyStar");
+const mobileMenu = document.getElementById("mobileMenu");
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -21,7 +25,7 @@ function showToast(message) {
   showToast.timer = setTimeout(() => {
     toast.style.opacity = "0";
     toast.style.transform = "translate(-50%, 20px)";
-  }, 2400);
+  }, 2800);
 }
 
 if (!prefersReducedMotion && cursor) {
@@ -76,6 +80,29 @@ if (!prefersReducedMotion && window.gsap) {
     stagger: 0.12,
     delay: 0.35,
     ease: "power3.out"
+  });
+
+  gsap.to(".constellation-route", {
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    },
+    strokeDashoffset: 0,
+    duration: 2.2,
+    ease: "power2.inOut"
+  });
+
+  gsap.to(".constellation-stars circle", {
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    },
+    opacity: 1,
+    duration: 0.5,
+    stagger: 0.16,
+    ease: "power2.out"
   });
 
   gsap.utils.toArray(".glass-panel, .glass-card, .atlas-node").forEach((element) => {
@@ -207,7 +234,7 @@ function stopAmbience() {
 }
 
 function playUiSound(frequency = 660, duration = 0.09) {
-  if (!soundToggle.getAttribute("aria-pressed") === "true") return;
+  if (soundToggle.getAttribute("aria-pressed") !== "true") return;
 
   const context = ensureAudioContext();
   const oscillator = context.createOscillator();
@@ -247,6 +274,7 @@ document.querySelectorAll(".btn, .icon-btn, .atlas-node").forEach((element) => {
     playUiSound(660, 0.07);
   });
 });
+
 copyEmail.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText("revanthkm13@gmail.com");
@@ -258,10 +286,42 @@ copyEmail.addEventListener("click", async () => {
   }
 });
 
+let deepSpaceActive = false;
+
+function activateHyperJump() {
+  if (deepSpaceActive) {
+    deactivateDeepSpace();
+    return;
+  }
+
+  deepSpaceActive = true;
+  document.body.classList.add("hyper-jump");
+
+  showToast("Hyper Jump engaged");
+  playUiSound(1180, 0.18);
+
+  setTimeout(() => {
+    showToast("Think strategically. Plan hard. Execute brutally perfect. Destroy opponents.");
+  }, 900);
+}
+
+function deactivateDeepSpace() {
+  deepSpaceActive = false;
+  document.body.classList.remove("hyper-jump");
+  showToast("Returned to normal coordinates");
+  playUiSound(420, 0.12);
+}
+
+strategyStar.addEventListener("click", activateHyperJump);
+
 document.addEventListener("keydown", (event) => {
-  if (event.key.toLowerCase() === "a" && event.altKey) {
-    document.body.style.filter = "hue-rotate(35deg) saturate(1.25)";
-    showToast("Deep Space mode engaged");
+  if (event.altKey && event.key.toLowerCase() === "a") {
+    event.preventDefault();
+    activateHyperJump();
+  }
+
+  if (event.key === "Escape" && deepSpaceActive) {
+    deactivateDeepSpace();
   }
 });
 
@@ -273,4 +333,19 @@ document.querySelector(".site-footer").appendChild(hiddenStar);
 
 hiddenStar.addEventListener("click", () => {
   showToast("“Knowledge is of no value unless you put it into practice.” — Anton Chekhov");
+});
+
+openMenu.addEventListener("click", () => {
+  mobileMenu.showModal();
+  playUiSound(760, 0.08);
+});
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.close();
+});
+
+mobileMenu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.close();
+  });
 });
