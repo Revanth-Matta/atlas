@@ -67,3 +67,24 @@ body.hyper-jump::after{content:"";position:fixed;inset:0;z-index:80;pointer-even
 @media(max-width:880px){.atlas-nav{top:12px;gap:10px;padding:10px 12px}.nav-orbit{display:none}.nav-brand span:last-child{display:none}.mobile-menu-button{display:block}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.cursor{display:none}.art-route{stroke-dashoffset:0}.art-star{opacity:.8}body.hyper-jump,body.hyper-jump .nebula,body.hyper-jump::after{animation:none}body.hyper-jump{filter:hue-rotate(35deg) saturate(1.25)}}
 @media(prefers-reduced-transparency:reduce){.glass-panel,.glass-card,.atlas-nav,.btn-glass,.mobile-atlas-menu{background:var(--indigo);backdrop-filter:none}}
+.prototype-figure {
+  margin: 22px 0 0;
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.prototype-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.prototype-figure figcaption {
+  padding: 12px 16px;
+  color: var(--silver);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
