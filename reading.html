@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Reading & Stories — Revanth’s Atlas</title>
+<meta name="description" content="Revanth’s reading universe: original stories, preferences, and the journey of Heirs of Last Summer."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;500;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/main.css"/>
+<link rel="stylesheet" href="assets/css/atlas.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div class="nebula" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<header class="atlas-nav">
+<a class="nav-brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>Revanth’s Atlas</span></a>
+<div class="nav-controls">
+<button id="soundToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle sound"><span aria-hidden="true">♪</span></button>
+<button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark mode"><span aria-hidden="true">☾</span></button>
+</div>
+</header>
+<main id="main" class="region-page">
+<div class="region-page-inner">
+<a class="region-return" href="index.html">← Back to Atlas</a>
+<section class="region-hero"><p class="section-label">Region 01</p><h1>Reading & Stories</h1><p class="region-lede">A constellation of imagination, overlooked characters, and possibilities hidden within stories.</p></section>
+<section class="glass-panel">
+<h2>Story in progress</h2>
+<div class="feature-card"><p class="feature-label">Currently drafting</p><h3>Heirs of Last Summer</h3><p class="feature-meta">Fantasy / Fiction · 50% finalised · Drafting stage</p><p>A fictional fantasy beginning in a college or university setting and expanding into a wider outer-world stage. I am currently finalising the world settings and characters.</p><p class="feature-note">A highly entertaining fantasy with adventure, mystery, humour, action, exploration, and minimal romance—without dark or tragic themes.</p></div>
+<div class="note-grid">
+<details class="note-card" open><summary><span class="note-status">In progress</span><span>World-building route</span></summary><div class="note-body"><p>I am shaping the world, its rules, locations, conflicts, and the larger outer-world stage beyond the college setting.</p><ul class="note-tags"><li>Fantasy</li><li>World-building</li><li>Drafting</li></ul></div></details>
+<details class="note-card" open><summary><span class="note-status">In progress</span><span>Character development</span></summary><div class="note-body"><p>I am developing the main characters, their motivations, relationships, strengths, and the choices that will shape the story.</p><ul class="note-tags"><li>Characters</li><li>Motivation</li><li>Story arcs</li></ul></div></details>
+<details class="note-card"><summary><span class="note-status">Future</span><span>Publishing route: Webnovel</span></summary><div class="note-body"><p>Webnovel is my first-choice platform for publishing the story. Future updates may include chapter planning, release notes, and story updates.</p><ul class="note-tags"><li>Webnovel</li><li>Publishing</li><li>Original fiction</li></ul></div></details>
+<details class="note-card"><summary><span class="note-status">Future</span><span>Reading notes and recommendations</span></summary><div class="note-body"><p>Future notes may include books, series, films, and stories that shaped my imagination, along with recommendations and reflections.</p><ul class="note-tags"><li>Reading notes</li><li>Recommendations</li><li>Story ideas</li></ul></div></details>
+</div>
+</section>
+<section class="glass-panel" style="margin-top:35px;">
+<h2>Story preferences</h2>
+<p>I enjoy immersive worlds, “what if” moments, adventure, strategy, humour, mystery, and stories where one decision changes everything.</p>
+<div class="preference-list">
+<div class="preference-item"><span>✦</span><span>Harry Potter</span></div><div class="preference-item"><span>✦</span><span>Game of Thrones</span></div><div class="preference-item"><span>✦</span><span>Percy Jackson</span></div><div class="preference-item"><span>✦</span><span>The Chronicles of Narnia</span></div><div class="preference-item"><span>✦</span><span>The Lord of the Rings</span></div><div class="preference-item"><span>✦</span><span>Suits</span></div><div class="preference-item"><span>✦</span><span>The Mentalist</span></div><div class="preference-item"><span>✦</span><span>Popular TV series and serials</span></div><div class="preference-item"><span>✦</span><span>Movies</span></div><div class="preference-item"><span>✦</span><span>Animation series and movies</span></div><div class="preference-item"><span>✦</span><span>Books and literature</span></div><div class="preference-item"><span>✦</span><span>Fanfiction inspired by favourite worlds</span></div>
+</div>
+<div class="future-route"><p class="route-label">Possible additions</p><p>Sherlock, Doctor Who, Stranger Things, The Witcher, Marvel, DC, Star Wars, Naruto, One Piece, Demon Slayer, Attack on Titan, Death Note, Fullmetal Alchemist, Avatar: The Last Airbender, Arcane, Spider-Man, Interstellar, Inception, The Dark Knight, Dune, The Hunger Games, Eragon, The Hobbit, Sherlock Holmes, Agatha Christie, Rick Riordan, and Brandon Sanderson.</p></div>
+</section>
+<div class="route-navigation"><a class="btn btn-outline" href="food.html">← Previous route</a><a class="btn btn-primary" href="games.html">Next route →</a></div>
+<a class="region-return" href="index.html">← Back to Atlas</a>
+</div>
+</main>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/stars.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,552 +1,111 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revanth’s Atlas — A Living Map of Curiosity</title>
-  <meta name="description" content="Revanth’s Atlas is a living map of curiosity, stories, strategy, making, and everyday discovery." />
-  <meta property="og:title" content="Revanth’s Atlas" />
-  <meta property="og:description" content="A living map of curiosity, stories, strategy, making, and everyday discovery." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://revanth-matta.github.io/atlas/" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;500;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/atlas.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Revanth’s Atlas — A Living Map of Curiosity</title>
+<meta name="description" content="Revanth’s Atlas is a living map of curiosity, stories, strategy, making, and everyday discovery."/>
+<meta property="og:title" content="Revanth’s Atlas"/>
+<meta property="og:description" content="A living map of curiosity, stories, strategy, making, and everyday discovery."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://revanth-matta.github.io/atlas/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;500;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/main.css"/>
+<link rel="stylesheet" href="assets/css/atlas.css"/>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <canvas id="starfield" aria-hidden="true"></canvas>
-  <div class="nebula" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-
-  <header class="atlas-nav" id="atlasNav">
-    <a class="nav-brand" href="#top" aria-label="Revanth’s Atlas home">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>Revanth’s Atlas</span>
-    </a>
-
-    <nav class="nav-orbit" aria-label="Primary">
-      <a href="#atlas">Atlas</a>
-      <a href="#coordinates">Coordinates</a>
-      <a href="#journey">Journey</a>
-      <a href="#exploring">Exploring</a>
-      <a href="#connect">Connect</a>
-    </nav>
-
-    <div class="nav-controls">
-      <button id="soundToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle sound">
-        <span aria-hidden="true">♪</span>
-      </button>
-      <button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark mode">
-        <span aria-hidden="true">☾</span>
-      </button>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <svg class="hero-constellation" viewBox="0 0 1200 600" aria-hidden="true">
-        <defs>
-          <linearGradient id="routeGradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#37e0c8" />
-            <stop offset="100%" stop-color="#6d5bff" />
-          </linearGradient>
-        </defs>
-
-        <path
-          class="constellation-route"
-          d="M120 430 C 260 300, 380 180, 600 300 C 760 390, 900 250, 1080 170"
-          fill="none"
-          stroke="url(#routeGradient)"
-          stroke-width="2"
-          stroke-linecap="round"
-        />
-
-        <g class="constellation-stars">
-          <circle cx="120" cy="430" r="4" />
-          <circle cx="300" cy="280" r="3" />
-          <circle cx="470" cy="205" r="4" />
-          <circle cx="600" cy="300" r="5" />
-          <circle cx="760" cy="390" r="3" />
-          <circle cx="900" cy="250" r="4" />
-          <circle cx="1080" cy="170" r="5" />
-        </g>
-      </svg>
-
-      <div class="hero-inner">
-        <p class="eyebrow">Hyderabad, Telangana, India</p>
-        <h1 class="hero-title" id="heroTitle">Revanth’s Atlas</h1>
-        <p class="hero-subtitle">
-          A living map of curiosity, stories, strategy, making, and everyday discovery.
-        </p>
-
-        <ul class="trait-constellation" aria-label="Personal traits">
-          <li>Curious</li>
-          <li>Ambitious</li>
-          <li>Playful</li>
-          <li>Builder</li>
-          <li>Storyteller</li>
-          <li>Explorer</li>
-        </ul>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary magnetic" href="#atlas">Begin the journey</a>
-        </div>
-
-        <p class="scroll-cue" aria-hidden="true">Scroll to navigate</p>
-      </div>
-    </section>
-
-    <section class="section atlas-map" id="atlas">
-      <div class="section-head">
-        <p class="section-label">The Atlas</p>
-        <h2>Five regions of curiosity</h2>
-        <p>Choose a destination. Each route holds stories, questions, experiments, and discoveries.</p>
-      </div>
-
-      <div class="constellation" role="list">
-        <a class="atlas-node" href="#reading" role="listitem" data-region="reading">
-          <span class="node-icon" aria-hidden="true">✦</span>
-          <span class="node-title">Reading & Stories</span>
-          <span class="node-note">Imagination, characters, and possibilities</span>
-        </a>
-
-        <a class="atlas-node" href="#games" role="listitem" data-region="games">
-          <span class="node-icon" aria-hidden="true">◈</span>
-          <span class="node-title">Games & Thinking</span>
-          <span class="node-note">Strategy, choices, and immersive worlds</span>
-        </a>
-
-        <a class="atlas-node" href="#learning" role="listitem" data-region="learning">
-          <span class="node-icon" aria-hidden="true">◍</span>
-          <span class="node-title">Learning & Data</span>
-          <span class="node-note">Questions, patterns, and new skills</span>
-        </a>
-
-        <a class="atlas-node" href="#making" role="listitem" data-region="making">
-          <span class="node-icon" aria-hidden="true">⬡</span>
-          <span class="node-title">Making & Building</span>
-          <span class="node-note">Ideas turned into useful experiences</span>
-        </a>
-
-        <a class="atlas-node" href="#food" role="listitem" data-region="food">
-          <span class="node-icon" aria-hidden="true">❋</span>
-          <span class="node-title">Food & Well-being</span>
-          <span class="node-note">Flavours, choices, and feeling good</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="section region" id="reading">
-      <article class="glass-panel">
-        <svg class="region-art" viewBox="0 0 320 180" aria-hidden="true">
-          <defs>
-            <linearGradient id="bookGlow" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#37e0c8" />
-              <stop offset="100%" stop-color="#6d5bff" />
-            </linearGradient>
-          </defs>
-
-          <path class="art-route" d="M40 130 C 100 80, 150 45, 220 70 C 260 85, 280 55, 295 35" />
-          <circle class="art-star" cx="40" cy="130" r="4" />
-          <circle class="art-star" cx="120" cy="85" r="3" />
-          <circle class="art-star" cx="220" cy="70" r="4" />
-          <circle class="art-star" cx="295" cy="35" r="5" />
-
-          <path class="book-base" d="M75 125 Q 125 105 160 125 Q 195 105 245 125 L245 140 Q 200 120 160 140 Q 120 120 75 140 Z" />
-          <path class="book-page" d="M160 125 Q 125 105 85 122 L85 108 Q 125 92 160 112 Z" />
-          <path class="book-page" d="M160 125 Q 195 105 235 122 L235 108 Q 195 92 160 112 Z" />
-          <path class="book-spine" d="M160 112 L160 140" />
-        </svg>
-
-        <p class="region-index">01</p>
-        <h2>Reading & Stories</h2>
-        <p class="region-lede">
-          A constellation of imagination, overlooked characters, and possibilities hidden within stories.
-        </p>
-        <p>
-          I enjoy immersive worlds, “what if” moments, and stories where one decision changes everything.
-        </p>
-
-        <div class="feature-card">
-          <p class="feature-label">Currently drafting</p>
-          <h3>Heirs of Last Summer</h3>
-          <p class="feature-meta">Fantasy / Fiction · 50% finalised · Drafting stage</p>
-          <p>
-            A fictional fantasy beginning in a college or university setting and expanding into a wider
-            outer-world stage. I am currently finalising the world settings and characters.
-          </p>
-          <p class="feature-note">
-            A highly entertaining fantasy with adventure, mystery, humour, action, exploration, and minimal
-            romance—without dark or tragic themes.
-          </p>
-        </div>
-
-        <div class="future-route">
-          <p class="route-label">Future route</p>
-          <p>Reading notes · Recommendations · Story ideas · World-building logs</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="section region" id="games">
-      <article class="glass-panel">
-        <svg class="region-art" viewBox="0 0 320 180" aria-hidden="true">
-          <defs>
-            <linearGradient id="gameGlow" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#6d5bff" />
-              <stop offset="100%" stop-color="#37e0c8" />
-            </linearGradient>
-          </defs>
-
-          <path class="art-route" d="M45 140 L110 95 L165 125 L220 70 L280 95" />
-          <circle class="art-star" cx="45" cy="140" r="4" />
-          <circle class="art-star" cx="110" cy="95" r="5" />
-          <circle class="art-star" cx="165" cy="125" r="3" />
-          <circle class="art-star" cx="220" cy="70" r="5" />
-          <circle class="art-star" cx="280" cy="95" r="4" />
-
-          <path class="game-node" d="M100 80 L120 95 L100 110 L80 95 Z" />
-          <path class="game-node" d="M210 55 L230 70 L210 85 L190 70 Z" />
-          <path class="game-node" d="M270 80 L290 95 L270 110 L250 95 Z" />
-        </svg>
-
-        <p class="region-index">02</p>
-        <h2>Games & Thinking</h2>
-        <p class="region-lede">
-          A constellation of strategies, decisions, and worlds shaped by every choice.
-        </p>
-        <p>
-          I enjoy strategy-driven games, immersive worlds, and adapting step by step.
-        </p>
-
-        <div class="feature-card">
-          <p class="feature-label">Current destination</p>
-          <h3>Game of Thrones: Kingsroad</h3>
-          <p class="feature-meta">Currently playing</p>
-          <p>
-            Exploring strategy, decisions, and the way choices shape a larger journey.
-          </p>
-        </div>
-
-        <div class="future-route">
-          <p class="route-label">Future route</p>
-          <p>Game notes · Strategies · Favourite moments</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="section region" id="learning">
-      <article class="glass-panel">
-        <svg class="region-art" viewBox="0 0 320 180" aria-hidden="true">
-          <defs>
-            <linearGradient id="dataGlow" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#37e0c8" />
-              <stop offset="100%" stop-color="#ff7a66" />
-            </linearGradient>
-          </defs>
-
-          <ellipse class="data-orbit" cx="160" cy="95" rx="115" ry="48" />
-          <ellipse class="data-orbit" cx="160" cy="95" rx="75" ry="30" />
-
-          <path class="art-route" d="M60 120 L110 75 L160 105 L210 60 L260 95" />
-          <circle class="art-star" cx="60" cy="120" r="4" />
-          <circle class="art-star" cx="110" cy="75" r="4" />
-          <circle class="art-star" cx="160" cy="105" r="5" />
-          <circle class="art-star" cx="210" cy="60" r="4" />
-          <circle class="art-star" cx="260" cy="95" r="3" />
-
-          <rect class="data-bar" x="95" y="115" width="14" height="30" rx="4" />
-          <rect class="data-bar" x="125" y="100" width="14" height="45" rx="4" />
-          <rect class="data-bar" x="155" y="85" width="14" height="60" rx="4" />
-          <rect class="data-bar" x="185" y="70" width="14" height="75" rx="4" />
-        </svg>
-
-        <p class="region-index">03</p>
-        <h2>Learning & Data</h2>
-        <p class="region-lede">
-          An open expanse for questions, patterns, data, and new skills.
-        </p>
-
-        <div class="skill-orbit">
-          <span>SQL</span>
-          <span>Tableau</span>
-          <span>Power BI</span>
-          <span>Advanced Excel</span>
-        </div>
-
-        <div class="feature-card">
-          <p class="feature-label">Exploring</p>
-          <p>
-            AI tools · Digital marketing · Productivity · Design systems · Game development
-          </p>
-        </div>
-
-        <div class="future-route">
-          <p class="route-label">Future route</p>
-          <p>Learning progress · Mini-projects · Data explorations</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="section region" id="making">
-      <article class="glass-panel">
-        <svg class="region-art" viewBox="0 0 320 180" aria-hidden="true">
-          <defs>
-            <linearGradient id="buildGlow" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#ff7a66" />
-              <stop offset="100%" stop-color="#6d5bff" />
-            </linearGradient>
-          </defs>
-
-          <path class="art-route" d="M50 135 C 100 110, 130 70, 180 90 C 230 110, 260 70, 285 45" />
-          <circle class="art-star" cx="50" cy="135" r="4" />
-          <circle class="art-star" cx="130" cy="70" r="3" />
-          <circle class="art-star" cx="180" cy="90" r="5" />
-          <circle class="art-star" cx="285" cy="45" r="4" />
-
-          <rect class="blueprint" x="70" y="95" width="90" height="55" rx="8" />
-          <path class="blueprint-line" d="M85 110 L145 110 M85 125 L125 125 M85 140 L135 140" />
-
-          <path class="rocket-body" d="M225 105 C 235 75, 255 60, 275 50 C 275 80, 265 105, 245 120 Z" />
-          <path class="rocket-fin" d="M235 110 L220 130 L240 122 Z" />
-          <path class="rocket-fin" d="M255 108 L270 128 L250 122 Z" />
-          <path class="rocket-flame" d="M238 122 Q 245 145 252 122" />
-        </svg>
-
-        <p class="region-index">04</p>
-        <h2>Making & Building</h2>
-        <p class="region-lede">
-          A route for creating, experimenting, and turning small ideas into useful experiences.
-        </p>
-
-        <div class="build-grid">
-          <div class="feature-card">
-            <p class="feature-label">Mission status</p>
-            <h3>Resume Template Builder</h3>
-            <p class="feature-meta">Prototype ready · Testing and improvements underway</p>
-            <p>A simple browser-based tool for creating and customising resumes.</p>
-          </div>
-
-          <div class="feature-card">
-            <p class="feature-label">Mission status</p>
-            <h3>Job Fit Smart Analyzer</h3>
-            <p class="feature-meta">Prototype ready · Testing and new additions underway</p>
-            <p>A personal tool for reviewing job descriptions, checking fit, and preparing outreach messages.</p>
-          </div>
-        </div>
-
-        <div class="future-route">
-          <p class="route-label">Future route</p>
-          <p>Offline-first tools · Selected experiments · Useful digital products</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="section region" id="food">
-      <article class="glass-panel">
-        <svg class="region-art" viewBox="0 0 320 180" aria-hidden="true">
-          <defs>
-            <linearGradient id="foodGlow" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#ff7a66" />
-              <stop offset="100%" stop-color="#37e0c8" />
-            </linearGradient>
-          </defs>
-
-          <path class="art-route" d="M45 120 C 95 85, 145 125, 195 85 C 235 60, 270 80, 290 55" />
-          <circle class="art-star" cx="45" cy="120" r="4" />
-          <circle class="art-star" cx="145" cy="125" r="3" />
-          <circle class="art-star" cx="195" cy="85" r="4" />
-          <circle class="art-star" cx="290" cy="55" r="5" />
-
-          <path class="bowl" d="M85 110 Q 130 155 175 110 Z" />
-          <path class="bowl-rim" d="M80 108 Q 130 100 180 108" />
-          <path class="steam" d="M110 90 Q 105 72 115 58 M130 90 Q 125 70 135 56 M150 90 Q 145 72 155 58" />
-
-          <path class="leaf" d="M225 105 Q 245 70 275 75 Q 260 110 225 105 Z" />
-          <path class="leaf-vein" d="M232 102 Q 250 88 268 79" />
-        </svg>
-
-        <p class="region-index">05</p>
-        <h2>Food & Well-being</h2>
-        <p class="region-lede">
-          A warm point for everyday meals, better choices, and small experiments in feeling good.
-        </p>
-        <p>
-          Exploring varieties in vegetarian food and trying new flavours and dishes.
-        </p>
-
-        <div class="future-route">
-          <p class="route-label">Future route</p>
-          <p>Food experiments · Simple recipes · Well-being notes</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="section" id="coordinates">
-      <div class="section-head">
-        <p class="section-label">Current Coordinates</p>
-        <h2>Where the journey stands today</h2>
-      </div>
-
-      <div class="coordinates-panel glass-panel">
-        <div class="coordinate">
-          <span class="coordinate-label">Reading</span>
-          <span class="coordinate-value">Drafting an original novel</span>
-        </div>
-        <div class="coordinate">
-          <span class="coordinate-label">Playing</span>
-          <span class="coordinate-value">Game of Thrones: Kingsroad</span>
-        </div>
-        <div class="coordinate">
-          <span class="coordinate-label">Learning</span>
-          <span class="coordinate-value">SQL, Tableau, Power BI, and Advanced Excel</span>
-        </div>
-        <div class="coordinate">
-          <span class="coordinate-label">Making</span>
-          <span class="coordinate-value">Resume Template Builder and Job Fit Smart Analyzer</span>
-        </div>
-        <div class="coordinate">
-          <span class="coordinate-label">Exploring</span>
-          <span class="coordinate-value">AI tools and healthier food combinations</span>
-        </div>
-      </div>
-
-      <button class="hidden-star coordinates-star" id="strategyStar" type="button" aria-label="Reveal a hidden strategy thought">
-        ✦
-      </button>
-    </section>
-
-    <section class="section" id="journey">
-      <div class="section-head">
-        <p class="section-label">Journey Log</p>
-        <h2>Waypoints and future routes</h2>
-      </div>
-
-      <ol class="journey-line">
-        <li>
-          <span class="waypoint"></span>
-          <div>
-            <h3>Began drafting <em>Heirs of Last Summer</em></h3>
-            <p>Finalising the world settings and characters.</p>
-          </div>
-        </li>
-        <li>
-          <span class="waypoint"></span>
-          <div>
-            <h3>Built the first prototypes</h3>
-            <p>Resume Template Builder and Job Fit Smart Analyzer.</p>
-          </div>
-        </li>
-        <li>
-          <span class="waypoint"></span>
-          <div>
-            <h3>Started learning data analysis</h3>
-            <p>SQL, Tableau, Power BI, and Advanced Excel.</p>
-          </div>
-        </li>
-        <li>
-          <span class="waypoint future"></span>
-          <div>
-            <h3>Future route</h3>
-            <p>Offline-first tools, selected experiments, and useful digital products.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section class="section" id="exploring">
-      <div class="section-head">
-        <p class="section-label">Now Exploring</p>
-        <h2>Live signals from the atlas</h2>
-      </div>
-
-      <div class="exploring-grid">
-        <div class="glass-card">
-          <p class="card-label">Reading</p>
-          <p>Heirs of Last Summer</p>
-        </div>
-        <div class="glass-card">
-          <p class="card-label">Playing</p>
-          <p>Game of Thrones: Kingsroad</p>
-        </div>
-        <div class="glass-card">
-          <p class="card-label">Learning</p>
-          <p>SQL · Tableau · Power BI · Advanced Excel</p>
-        </div>
-        <div class="glass-card">
-          <p class="card-label">Making</p>
-          <p>Resume Template Builder · Job Fit Smart Analyzer</p>
-        </div>
-        <div class="glass-card">
-          <p class="card-label">Exploring</p>
-          <p>AI tools · Healthier food combinations</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section connect" id="connect">
-      <div class="section-head">
-        <p class="section-label">Connect</p>
-        <h2>Send a signal</h2>
-        <p>If something here resonates, or you would simply like to connect, send a message.</p>
-      </div>
-
-      <div class="connect-actions">
-        <a class="btn btn-primary magnetic" href="mailto:revanthkm13@gmail.com">Email Revanth</a>
-        <button class="btn btn-glass magnetic" id="copyEmail" type="button">Copy email</button>
-        <a class="btn btn-outline magnetic" href="https://revanth-matta.github.io/" target="_blank" rel="noopener">
-          Professional Journey
-        </a>
-      </div>
-
-      <p class="copy-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Revanth Matta · Revanth’s Atlas</p>
-    <p class="footer-hint">A hidden star knows a quote.</p>
-  </footer>
-
-  <dialog class="mobile-atlas-menu" id="mobileMenu" aria-labelledby="mobileMenuTitle">
-    <div class="mobile-menu-head">
-      <p id="mobileMenuTitle">Atlas Navigator</p>
-      <button class="icon-btn" id="closeMenu" aria-label="Close Atlas menu">✕</button>
-    </div>
-
-    <nav class="mobile-menu-links" aria-label="Mobile Atlas navigation">
-      <a href="#atlas">The Atlas</a>
-      <a href="#coordinates">Current Coordinates</a>
-      <a href="#journey">Journey Log</a>
-      <a href="#exploring">Now Exploring</a>
-      <a href="#connect">Connect</a>
-      <a href="https://revanth-matta.github.io/" target="_blank" rel="noopener">Professional Journey</a>
-    </nav>
-
-    <div class="mobile-menu-foot">
-      <a class="btn btn-primary" href="#connect">Send a signal</a>
-    </div>
-  </dialog>
-
-  <button class="mobile-menu-button" id="openMenu" aria-label="Open Atlas menu" aria-controls="mobileMenu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script src="assets/js/stars.js"></script>
-  <script src="assets/js/main.js"></script>
+<a class="skip-link" href="#main">Skip to main content</a>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div class="nebula" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<header class="atlas-nav">
+<a class="nav-brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>Revanth’s Atlas</span></a>
+<nav class="nav-orbit" aria-label="Primary">
+<a href="index.html#atlas">Atlas</a><a href="index.html#coordinates">Coordinates</a><a href="index.html#journey">Journey</a><a href="index.html#exploring">Exploring</a><a href="index.html#connect">Connect</a>
+</nav>
+<div class="nav-controls">
+<button id="soundToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle sound"><span aria-hidden="true">♪</span></button>
+<button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark mode"><span aria-hidden="true">☾</span></button>
+</div>
+</header>
+<main id="main">
+<section class="hero" id="top">
+<svg class="hero-constellation" viewBox="0 0 1200 600" aria-hidden="true"><defs><linearGradient id="routeGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#37e0c8"/><stop offset="100%" stop-color="#6d5bff"/></linearGradient></defs><path class="constellation-route" d="M120 430 C 260 300, 380 180, 600 300 C 760 390, 900 250, 1080 170" fill="none" stroke="url(#routeGradient)" stroke-width="2" stroke-linecap="round"/><g class="constellation-stars"><circle cx="120" cy="430" r="4"/><circle cx="300" cy="280" r="3"/><circle cx="470" cy="205" r="4"/><circle cx="600" cy="300" r="5"/><circle cx="760" cy="390" r="3"/><circle cx="900" cy="250" r="4"/><circle cx="1080" cy="170" r="5"/></g></svg>
+<div class="hero-inner">
+<p class="eyebrow">Hyderabad, Telangana, India</p>
+<h1 class="hero-title" id="heroTitle">Revanth’s Atlas</h1>
+<p class="hero-subtitle">A living map of curiosity, stories, strategy, making, and everyday discovery.</p>
+<ul class="trait-constellation" aria-label="Personal traits"><li>Curious</li><li>Ambitious</li><li>Playful</li><li>Builder</li><li>Storyteller</li><li>Explorer</li></ul>
+<div class="hero-actions"><a class="btn btn-primary magnetic" href="#atlas">Begin the journey</a></div>
+<p class="scroll-cue" aria-hidden="true">Scroll to navigate</p>
+</div>
+</section>
+<section class="section atlas-map" id="atlas">
+<div class="section-head"><p class="section-label">The Atlas</p><h2>Five regions of curiosity</h2><p>Choose a destination. Each route opens a new space page.</p></div>
+<div class="constellation" role="list">
+<a class="atlas-node" href="reading.html" role="listitem"><span class="node-icon" aria-hidden="true">✦</span><span class="node-title">Reading & Stories</span><span class="node-note">Imagination, characters, and possibilities</span></a>
+<a class="atlas-node" href="games.html" role="listitem"><span class="node-icon" aria-hidden="true">◈</span><span class="node-title">Games & Thinking</span><span class="node-note">Strategy, choices, and immersive worlds</span></a>
+<a class="atlas-node" href="learning.html" role="listitem"><span class="node-icon" aria-hidden="true">◍</span><span class="node-title">Learning & Data</span><span class="node-note">Questions, patterns, and new skills</span></a>
+<a class="atlas-node" href="making.html" role="listitem"><span class="node-icon" aria-hidden="true">⬡</span><span class="node-title">Making & Building</span><span class="node-note">Ideas turned into useful experiences</span></a>
+<a class="atlas-node" href="food.html" role="listitem"><span class="node-icon" aria-hidden="true">❋</span><span class="node-title">Food & Well-being</span><span class="node-note">Flavours, choices, and feeling good</span></a>
+</div>
+</section>
+<section class="section" id="coordinates">
+<div class="section-head"><p class="section-label">Current Coordinates</p><h2>Where the journey stands today</h2></div>
+<div class="coordinates-panel glass-panel">
+<div class="coordinate"><span class="coordinate-label">Reading</span><span class="coordinate-value">Drafting an original novel</span></div>
+<div class="coordinate"><span class="coordinate-label">Playing</span><span class="coordinate-value">Game of Thrones: Kingsroad</span></div>
+<div class="coordinate"><span class="coordinate-label">Learning</span><span class="coordinate-value">SQL, Tableau, Power BI, and Advanced Excel</span></div>
+<div class="coordinate"><span class="coordinate-label">Making</span><span class="coordinate-value">Resume Template Builder and Job Fit Smart Analyzer</span></div>
+<div class="coordinate"><span class="coordinate-label">Exploring</span><span class="coordinate-value">AI tools and healthier food combinations</span></div>
+</div>
+<button class="hidden-star coordinates-star" id="strategyStar" type="button" aria-label="Reveal a hidden strategy thought">✦</button>
+</section>
+<section class="section" id="journey">
+<div class="section-head"><p class="section-label">Journey Log</p><h2>Waypoints and future routes</h2></div>
+<ol class="journey-line">
+<li><span class="waypoint"></span><div><h3>Began drafting <em>Heirs of Last Summer</em></h3><p>Finalising the world settings and characters.</p></div></li>
+<li><span class="waypoint"></span><div><h3>Built the first prototypes</h3><p>Resume Template Builder and Job Fit Smart Analyzer.</p></div></li>
+<li><span class="waypoint"></span><div><h3>Started learning data analysis</h3><p>SQL, Tableau, Power BI, and Advanced Excel.</p></div></li>
+<li><span class="waypoint future"></span><div><h3>Future route</h3><p>Offline-first tools, selected experiments, and useful digital products.</p></div></li>
+</ol>
+</section>
+<section class="section" id="exploring">
+<div class="section-head"><p class="section-label">Now Exploring</p><h2>Live signals from the atlas</h2></div>
+<div class="exploring-grid">
+<div class="glass-card"><p class="card-label">Reading</p><p>Heirs of Last Summer</p></div>
+<div class="glass-card"><p class="card-label">Playing</p><p>Game of Thrones: Kingsroad</p></div>
+<div class="glass-card"><p class="card-label">Learning</p><p>SQL · Tableau · Power BI · Advanced Excel</p></div>
+<div class="glass-card"><p class="card-label">Making</p><p>Resume Template Builder · Job Fit Smart Analyzer</p></div>
+<div class="glass-card"><p class="card-label">Exploring</p><p>AI tools · Healthier food combinations</p></div>
+</div>
+</section>
+<section class="section connect" id="connect">
+<div class="section-head"><p class="section-label">Connect</p><h2>Send a signal</h2><p>If something here resonates, or you would simply like to connect, send a message.</p></div>
+<div class="connect-actions">
+<a class="btn btn-primary magnetic" href="mailto:revanthkm13@gmail.com">Email Revanth</a>
+<button class="btn btn-glass magnetic" id="copyEmail" type="button">Copy email</button>
+<a class="btn btn-outline magnetic" href="https://revanth-matta.github.io/" target="_blank" rel="noopener">Professional Journey</a>
+</div>
+<p class="copy-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
+</section>
+</main>
+<footer class="site-footer"><p>© <span id="year"></span> Revanth Matta · Revanth’s Atlas</p><p class="footer-hint">A hidden star knows a quote.</p></footer>
+<dialog class="mobile-atlas-menu" id="mobileMenu" aria-labelledby="mobileMenuTitle">
+<div class="mobile-menu-head"><p id="mobileMenuTitle">Atlas Navigator</p><button class="icon-btn" id="closeMenu" aria-label="Close Atlas menu">✕</button></div>
+<nav class="mobile-menu-links" aria-label="Mobile Atlas navigation">
+<a href="index.html#atlas">The Atlas</a><a href="index.html#coordinates">Current Coordinates</a><a href="index.html#journey">Journey Log</a><a href="index.html#exploring">Now Exploring</a><a href="index.html#connect">Connect</a><a href="https://revanth-matta.github.io/" target="_blank" rel="noopener">Professional Journey</a>
+</nav>
+<div class="mobile-menu-foot"><a class="btn btn-primary" href="index.html#connect">Send a signal</a></div>
+</dialog>
+<button class="mobile-menu-button" id="openMenu" aria-label="Open Atlas menu" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/stars.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Learning & Data — Revanth’s Atlas</title>
+<meta name="description" content="Revanth’s learning constellation: data analysis, AI tools, building, and continuous exploration."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Outfit:wght@300;400;500;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/main.css"/>
+<link rel="stylesheet" href="assets/css/atlas.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div class="nebula" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<header class="atlas-nav">
+<a class="nav-brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>Revanth’s Atlas</span></a>
+<div class="nav-controls">
+<button id="soundToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle sound"><span aria-hidden="true">♪</span></button>
+<button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark mode"><span aria-hidden="true">☾</span></button>
+</div>
+</header>
+<main id="main" class="region-page">
+<div class="region-page-inner">
+<a class="region-return" href="index.html">← Back to Atlas</a>
+<section class="region-hero"><p class="section-label">Region 03</p><h1>Learning & Data</h1><p class="region-lede">An open expanse for questions, patterns, data, and new skills.</p></section>
+<section class="glass-panel">
+<h2>Learning constellation</h2>
+<p>I am currently learning data analysis through SQL, Tableau, Power BI, and Advanced Excel. I am also exploring AI tools, digital marketing, productivity, design systems, and game development.</p>
+<div class="skill-card-grid">
+<div class="skill-card"><h3>SQL</h3><p>Exploring databases, queries, patterns, and data analysis foundations.</p></div>
+<div class="skill-card"><h3>Tableau</h3><p>Exploring visual storytelling, dashboards, and ways to make data understandable.</p></div>
+<div class="skill-card"><h3>Power BI</h3><p>Exploring interactive reports, data models, and business insights.</p></div>
+<div class="skill-card"><h3>Advanced Excel</h3><p>Exploring formulas, analysis, organisation, and practical data workflows.</p></div>
+</div>
+<div class="note-grid">
+<details class="note-card" open><summary><span class="note-status">Exploring</span><span>AI tools and building</span></summary><div class="note-body"><p>I dabble in multiple projects with AI assistance, combining my own guidance, ideas, and decisions with AI-supported coding and research. This includes creating GitHub-hosted live sites from scratch using code and scripts.</p><ul class="note-tags"><li>AI tools</li><li>GitHub Pages</li><li>Building</li></ul></div></details>
+<details class="note-card"><summary><span class="note-status">Future</span><span>Data mini-projects</span></summary><div class="note-body"><p>Future routes may include SQL practice, Tableau and Power BI dashboards, Excel experiments, and small data explorations.</p><ul class="note-tags"><li>SQL</li><li>Tableau</li><li>Power BI</li><li>Excel</li></ul></div></details>
+<details class="note-card"><summary><span class="note-status">Future</span><span>Learning progress</span></summary><div class="note-body"><p>Future updates may include completed lessons, useful resources, mini-projects, and reflections on what I am learning.</p><ul class="note-tags"><li>Learning log</li><li>Projects</li><li>Explorations</li></ul></div></details>
+</div>
+</section>
+<div class="route-navigation"><a class="btn btn-outline" href="games.html">← Previous route</a><a class="btn btn-primary" href="making.html">Next route →</a></div>
+<a class="region-return" href="index.html">← Back to Atlas</a>
+</div>
+</main>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/stars.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
