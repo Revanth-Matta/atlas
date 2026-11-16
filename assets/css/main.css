@@ -630,3 +630,16 @@ body {
     backdrop-filter: none;
   }
 }
+.hidden-star {
+  margin-top: 18px;
+  border: 0;
+  background: transparent;
+  color: var(--teal);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.hidden-star:hover,
+.hidden-star:focus-visible {
+  transform: scale(1.25);
+}
