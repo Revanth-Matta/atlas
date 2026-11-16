@@ -141,35 +141,96 @@ themeToggle.addEventListener("click", () => {
 });
 
 let audioContext = null;
+let masterGain = null;
 let ambientNodes = [];
 
-function createAmbience() {
-  audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  const gain = audioContext.createGain();
-  gain.gain.value = 0.025;
-  gain.connect(audioContext.destination);
+function ensureAudioContext() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
 
-  [110, 164.81, 220].forEach((frequency, index) => {
-    const oscillator = audioContext.createOscillator();
-    oscillator.type = "sine";
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+
+  return audioContext;
+}
+
+function createAmbience() {
+  const context = ensureAudioContext();
+
+  masterGain = context.createGain();
+  masterGain.gain.setValueAtTime(0.0001, context.currentTime);
+  masterGain.gain.linearRampToValueAtTime(0.16, context.currentTime + 1.8);
+  masterGain.connect(context.destination);
+
+  const frequencies = [98, 146.83, 196, 293.66];
+
+  frequencies.forEach((frequency, index) => {
+    const oscillator = context.createOscillator();
+    oscillator.type = index % 2 === 0 ? "sine" : "triangle";
     oscillator.frequency.value = frequency;
 
-    const oscillatorGain = audioContext.createGain();
-    oscillatorGain.gain.value = index === 0 ? 0.5 : 0.22;
+    const oscillatorGain = context.createGain();
+    oscillatorGain.gain.value = index === 0 ? 0.35 : 0.14;
+
+    const filter = context.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.value = 850;
 
     oscillator.connect(oscillatorGain);
-    oscillatorGain.connect(gain);
+    oscillatorGain.connect(filter);
+    filter.connect(masterGain);
+
     oscillator.start();
     ambientNodes.push(oscillator);
   });
+}
+
+function stopAmbience() {
+  if (!audioContext || !masterGain) return;
+
+  const now = audioContext.currentTime;
+  masterGain.gain.cancelScheduledValues(now);
+  masterGain.gain.setValueAtTime(masterGain.gain.value, now);
+  masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.7);
+
+  ambientNodes.forEach((node) => {
+    try {
+      node.stop(now + 0.8);
+    } catch {
+      // Oscillator may already be stopped.
+    }
+  });
+
+  ambientNodes = [];
+}
+
+function playUiSound(frequency = 660, duration = 0.09) {
+  if (!soundToggle.getAttribute("aria-pressed") === "true") return;
+
+  const context = ensureAudioContext();
+  const oscillator = context.createOscillator();
+  const gain = context.createGain();
+
+  oscillator.type = "sine";
+  oscillator.frequency.value = frequency;
+
+  gain.gain.setValueAtTime(0.0001, context.currentTime);
+  gain.gain.linearRampToValueAtTime(0.07, context.currentTime + 0.015);
+  gain.gain.linearRampToValueAtTime(0.0001, context.currentTime + duration);
+
+  oscillator.connect(gain);
+  gain.connect(context.destination);
+  oscillator.start();
+  oscillator.stop(context.currentTime + duration + 0.02);
 }
 
 soundToggle.addEventListener("click", () => {
   const enabled = soundToggle.getAttribute("aria-pressed") === "true";
 
   if (enabled) {
-    ambientNodes.forEach((node) => node.stop());
-    ambientNodes = [];
+    stopAmbience();
     soundToggle.setAttribute("aria-pressed", "false");
     showToast("Signal silenced");
     return;
@@ -178,8 +239,14 @@ soundToggle.addEventListener("click", () => {
   createAmbience();
   soundToggle.setAttribute("aria-pressed", "true");
   showToast("Ambient signal active");
+  playUiSound(880, 0.12);
 });
 
+document.querySelectorAll(".btn, .icon-btn, .atlas-node").forEach((element) => {
+  element.addEventListener("click", () => {
+    playUiSound(660, 0.07);
+  });
+});
 copyEmail.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText("revanthkm13@gmail.com");
